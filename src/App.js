@@ -4,7 +4,6 @@ import Header from "./components/Header";
 import About from "./components/About";
 import Projects from "./components/Projects";
 import Contact from "./components/Contact";
-//import HeroBanner from "./components/HeroBanner";
 import HomePage from "./components/HomePage";
 
 function App() {
