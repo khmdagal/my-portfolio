@@ -1,7 +1,7 @@
 /* eslint-disable jsx-a11y/img-redundant-alt */
 import React from "react";
 import profileImage from "../Images/Profilet1.jpg";
-import "../CSS-Files/HeroBanner.css";
+import "../CSS-Files/HomePage.css";
 
 function HomePage() {
   return (
