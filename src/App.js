@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+//import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Header from "./components/Header";
 import About from "./components/About";
 import Projects from "./components/Projects";
@@ -8,17 +8,14 @@ import HomePage from "./components/HomePage";
 
 function App() {
   return (
-    <Router>
+    <div>
       <Header />
-      
-      <Routes>
-        <Route path="/" element={<HomePage />} />
-        <Route path="/About" element={<About />} />
-        <Route path="/Projects" element={<Projects />} />
-        <Route path="/Contact" element={<Contact />} />
-      </Routes>
-    </Router>
-  );
+      <About />
+      <HomePage />
+      <Projects />
+      <Contact />
+    </div>
+  )
 }
 
 export default App;
