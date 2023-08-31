@@ -4,22 +4,7 @@ import "../CSS-Files/Header.css";
 function Header() {
   return (
     <header>
-      <nav>
-        <ul>
-          <li>
-            <a href="/">Home Page</a>
-          </li>
-          <li>
-            <a href="/About">About</a>
-          </li>
-          <li>
-            <a href="/Projects">Projects</a>
-          </li>
-          <li>
-            <a href="/Contact">Contact</a>
-          </li>
-        </ul>
-      </nav>
+      <h1>Khdar Mohamed Dagal Portfolio</h1>
     </header>
   );
 }
