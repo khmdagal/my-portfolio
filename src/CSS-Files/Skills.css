@@ -1,0 +1,26 @@
+.skills-container{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(100px,1fr));
+}
+
+
+.card{
+ background-color: green;
+ width: 100px;
+ height: 100px;
+ text-align: center;
+ border-radius: 15px;
+ display: flex;
+ flex-direction: column;
+ justify-content: center;
+ align-items: center;
+ margin: 5px;
+ color: azure;
+}
+.skill-name{
+   font-size: large; 
+   text-align: center;
+}
+.skill-image{
+    width: 50px;
+}
