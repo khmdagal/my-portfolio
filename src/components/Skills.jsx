@@ -84,7 +84,7 @@ export default function Skills() {
           return (
             <Card className="card" key={skill.name}>
               <img
-                className="skill-image"
+                className="skill-image card-img-top"
                 src={imageLogo}
                 alt="skill-logos"
                 key={skill.name}
