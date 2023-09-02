@@ -1,4 +1,11 @@
-/* Default styles for screens wider than tablets (e.g., desktop) */
+
+.skills-main-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(238, 245, 245);
+}
+
 .skills-container {
     display: flex;
     flex-wrap: wrap;
@@ -34,36 +41,83 @@
     height: 100px;
 }
 
-/* Media query for tablets */
+/*  large laptops */
+@media screen and (min-width: 1440px) {
+    .card {
+        width: 250px;
+        height: 250px;
+    }
+
+    .skill-image {
+        width: 120px;
+        height: 120px;
+    }
+}
+
+/* laptops  */
+@media screen and (max-width: 1024px) {
+    .card {
+        width: 180px;
+        height: 180px;
+    }
+
+    .skill-image {
+        width: 90px;
+        height: 90px;
+    }
+}
+
+/* tablets  */
 @media screen and (max-width: 768px) {
     .card {
-        width: 150px; 
-        height: 150px; 
+        width: 150px;
+        height: 150px;
     }
 
     .skill-image {
         width: 80px;
-        height: 80px; 
+        height: 80px;
     }
 }
 
-/* Media query for mobile devices */
-@media screen and (max-width: 480px) {
+/* large mobiles */
+@media screen and (max-width: 425px) {
     .card {
-        width: 100px; 
-        height: 100px; 
+        width: 120px;
+        height: 120px;
     }
 
     .skill-image {
-        width: 60px; 
-        height: 60px; 
+        width: 60px;
+        height: 60px;
     }
 
     .skills-title {
-        font-size: large; 
+        font-size: large;
     }
 
     .skill-name {
-        font-size: small; 
+        font-size: small;
+    }
+}
+
+/*  mobile devices  */
+@media screen and (max-width: 375px) {
+    .card {
+        width: 100px;
+        height: 100px;
+    }
+
+    .skill-image {
+        width: 50px;
+        height: 50px;
+    }
+
+    .skills-title {
+        font-size: medium;
+    }
+
+    .skill-name {
+        font-size: x-small;
     }
 }
