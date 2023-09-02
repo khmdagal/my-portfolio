@@ -3,7 +3,7 @@ import "../CSS-Files/Projects.css";
 import Data from "../Data/JasonData.json";
 
 function Projects() {
-  console.log(Data.Projects.map((project) => project));
+  
 
   return (
     <div className="mainContainer">
