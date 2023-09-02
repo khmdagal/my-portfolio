@@ -21,8 +21,8 @@ import "../CSS-Files/Skills.css"
 
 export default function Skills() {
   return (
-    <div className="main-container">
-      <h2 className="skills-title">Skills</h2>
+    <div className="skills-main-container">
+      <h2 className="title">Skills</h2>
       <div className="skills-container">
         {Data.technical_skills.map((skill) => {
             let imageLogo;
