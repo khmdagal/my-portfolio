@@ -5,7 +5,6 @@ body {
 }
 
 .main-container {
-    width: fit-content;
     width: 100%;
     height: 100vh;
     display: flex;
@@ -26,22 +25,50 @@ body {
     font-size: xx-large;
 }
 
-/* Media query for tablets */
-@media screen and (max-width: 768px) {
+/* large laptops*/
+@media screen and (max-width: 1440px) {
     .intro-container {
-        width: 80%; 
-        font-size: large; 
+        width: 70%;
+        font-size: x-large;
     }
 }
 
-/* Media query for mobile devices */
-@media screen and (max-width: 480px) {
+/* laptops*/
+@media screen and (max-width: 1024px) {
+    .intro-container {
+        width: 80%;
+        font-size: large;
+    }
+}
+
+/* tablets  */
+@media screen and (max-width: 768px) {
+    .intro-container {
+        width: 90%;
+        font-size: medium;
+    }
+}
+
+/*  large mobiles  */
+@media screen and (max-width: 425px) {
     .title {
         font-size: 6vw;
     }
 
     .intro-container {
-        width: 90%;
-        font-size: medium; 
+        width: 95%;
+        font-size: small;
+    }
+}
+
+/* small mobiles */
+@media screen and (max-width: 375px) {
+    .title {
+        font-size: 7vw;
+    }
+
+    .intro-container {
+        width: 100%;
+        font-size: x-small;
     }
 }
