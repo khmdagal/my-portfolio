@@ -1,30 +1,101 @@
+/* Base for small mobile devices  */
+
 .title {
     text-shadow: 10px 5px 5px rgb(27, 76, 92);
     text-transform: uppercase;
-    font-size: xx-large;
+    font-size: 16px; 
 }
 
 .projectsContainer {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
-
 .projectCard {
-  display: flex;
-  flex-direction: column;
-  margin: 30px;
-  padding: 20px;
-  background-color: #ffffff;
-  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-  width: 300px;
-  height: 300px;
-  text-align: center;
-  border-radius: 5px 5px 60px 60px;
+    display: flex;
+    flex-direction: column;
+    margin: 10px; 
+    padding: 10px; 
+    background-color: #ffffff;
+    box-shadow: 10px 10px 5px lightblue;
+    width: 100%; 
+    font-size: 14px; 
+    text-align: center;
+    border-radius: 5px 5px 60px 60px;
 }
 
 .projectTitle {
-  margin-top: 0;
+    margin-top: 0;
 }
 
+.project-intro, .projectObjective, .techStuck {
+    display: flex;
+    flex-direction: column;
+}
+
+span {
+    font-weight: bolder;
+}
+
+.demoLink {
+    font-family: Arial, Helvetica, sans-serif;
+    font-style: oblique;
+    font-weight: bolder;
+    margin: 5px;
+}
+
+.demoLink::first-letter {
+    text-transform: uppercase;
+    font-size: 20px; 
+}
+
+/* mobile devices */
+
+@media only screen and (min-width: 375px) {
+    .title {
+        font-size: 18px;
+    }
+
+    .projectCard {
+        margin: 15px;
+        padding: 15px;
+        font-size: 16px;
+    }
+
+    .demoLink::first-letter {
+        font-size: 24px;
+    }
+}
+
+/* large mobile devices  */
+
+@media only screen and (min-width: 425px) {
+    .projectCard {
+        width: 48%; 
+    }
+}
+
+/* tablets */
+
+@media only screen and (min-width: 768px) {
+    .projectCard {
+        width: 30%; 
+    }
+}
+
+/* laptops*/
+
+@media only screen and (min-width: 1024px) {
+    .projectCard {
+        width: 22%; 
+    }
+}
+
+/* large laptops  */
+
+@media only screen and (min-width: 1440px) {
+    .projectCard {
+        width: 20%; 
+    }
+}
