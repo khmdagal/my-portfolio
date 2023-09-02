@@ -26,8 +26,8 @@ function Contact() {
   };
 
   return (
-    <div className="Container">
-      <h1 className="--text-center">Send Email</h1>
+    <div className="container">
+      <h1 id="email-title" className="title">Contact me</h1>
       <form
         ref={form}
         onSubmit={handleSendEmail}
@@ -35,11 +35,18 @@ function Contact() {
       >
         <input
           type="text"
-          name="uer_name"
-          placeholder="Your Full Name or Foundation Name"
+          name="user_name"
+          placeholder="Please enter your name"
           required
         />
-        <input type="email" name="uer_email" placeholder="Email" required />
+        <input
+          value={"khmdagal@gmail.com"}
+          type="email"
+          name="uer_email"
+          placeholder="Email"
+          hidden
+        />
+        
         <input type="text" name="subject" placeholder="Subject" required />
         <textarea
           className="--textarea"
