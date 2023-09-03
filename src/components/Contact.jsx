@@ -1,10 +1,11 @@
 //import Form from "react-bootstrap/Form";
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import emailjs from "@emailjs/browser";
 import "../CSS-Files/Contact.css";
 
 function Contact() {
   const form = useRef();
+  const [successMsg, setSuccessMsg] = useState();
 
   const handleSendEmail = (e) => {
     e.preventDefault();
@@ -18,7 +19,7 @@ function Contact() {
       )
       .then((result) => {
         if (result.status === 200) {
-          alert("Email successfully sent");
+          setSuccessMsg("Thanks for contacting me, I'll get back to you soon😀")
         }
       })
       .catch((err) => console.error(err));
@@ -27,7 +28,10 @@ function Contact() {
 
   return (
     <div className="container">
-      <h1 id="email-title" className="title">Contact me</h1>
+      <h1 id="email-title" className="title">
+        Contact me
+      </h1>
+      {successMsg && <div className="successMsg">{successMsg}</div>}
       <form
         ref={form}
         onSubmit={handleSendEmail}
@@ -46,7 +50,7 @@ function Contact() {
           placeholder="Email"
           hidden
         />
-        
+
         <input type="text" name="subject" placeholder="Subject" required />
         <textarea
           className="--textarea"
@@ -61,29 +65,3 @@ function Contact() {
 }
 
 export default Contact;
-
-/*import React from "react";
-import "../CSS-Files/Contact.css";
-
-function Contact() {
-  return (
-    <div>
-      <h2>Contact</h2>
-      <form>
-        <label htmlFor="name">Name:</label>
-        <input type="text" id="name" name="name" required />
-
-        <label htmlFor="email">Email:</label>
-        <input type="email" id="email" name="email" required />
-
-        <label htmlFor="message">Message:</label>
-        <textarea id="message" name="message" required></textarea>
-
-        <button type="submit">Send</button>
-      </form>
-    </div>
-  );
-}
-
-export default Contact;
-*/
