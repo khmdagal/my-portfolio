@@ -5,7 +5,9 @@ import Contact from "./components/Contact";
 import AboutMe from "./components/AboutMe";
 import Skills from "./components/Skills";
 
+
 function App() {
+// do fetching here and pass props to the relevant component.
   
   return (
     <div >
