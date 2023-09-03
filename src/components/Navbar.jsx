@@ -2,6 +2,8 @@ import React from 'react'
 import "../CSS-Files/Navbar.css"
 
 export default function NavBar() {
+  const origin = window.location.origin
+  
   return (
     <nav className="nav">
       <ul>
@@ -9,16 +11,16 @@ export default function NavBar() {
           <a href="/">Home</a>
         </li>
         <li>
-          <a href="/aboutMe">About Me</a>
+          <a href={`${origin}/aboutMe`}>About Me</a>
         </li>
         <li>
-          <a href="/skills">Skills</a>
+          <a href={`${origin}/skills`}>Skills</a>
         </li>
         <li>
-          <a href="/projects">Project</a>
+          <a href={`${origin}/projects`}>Project</a>
         </li>
         <li>
-          <a href="/contact">Contact Me</a>
+          <a href={`${origin}/contact`}>Contact Me</a>
         </li>
       </ul>
     </nav>
