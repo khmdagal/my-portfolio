@@ -4,7 +4,7 @@ import Projects from "./components/Projects";
 import Contact from "./components/Contact";
 import AboutMe from "./components/AboutMe";
 import Skills from "./components/Skills";
-
+import Footer from "./components/Footer"
 
 function App() {
 // do fetching here and pass props to the relevant component.
@@ -15,7 +15,8 @@ function App() {
         <AboutMe />
         <Skills />
         <Projects />
-        <Contact />
+      <Contact />
+      <Footer />
     </div>
   );
 }
