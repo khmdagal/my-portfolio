@@ -8,7 +8,6 @@ function Projects() {
       <h2 className="title">Projects</h2>
       <div className="projectsContainer">
         {Data.Projects.map((project) => {
-          console.log(typeof project.Demo);
           return (
             <div className="projectCard" key={project.Project_Name}>
               <div className="project-intro">
