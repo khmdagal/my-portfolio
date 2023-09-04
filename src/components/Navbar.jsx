@@ -2,25 +2,25 @@ import React from 'react'
 import "../CSS-Files/Navbar.css"
 
 export default function NavBar() {
-  const origin = window.location.origin
+  //const origin = window.location.origin
   
   return (
     <nav className="nav">
       <ul>
         <li>
-          <a href="/">Home</a>
+          <a href="#home">Home</a>
         </li>
         <li>
-          <a href={`${origin}/aboutMe`}>About Me</a>
+          <a href="#about">About Me</a>
         </li>
         <li>
-          <a href={`${origin}/skills`}>Skills</a>
+          <a href="#skills">Skills</a>
         </li>
         <li>
-          <a href={`${origin}/projects`}>Project</a>
+          <a href="#projects">Project</a>
         </li>
         <li>
-          <a href={`${origin}/contact`}>Contact Me</a>
+          <a href="#contact">Contact Me</a>
         </li>
       </ul>
     </nav>

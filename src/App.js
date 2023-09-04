@@ -6,36 +6,28 @@ import AboutMe from "./components/AboutMe";
 import Skills from "./components/Skills";
 import Footer from "./components/Footer";
 import Navbar from "./components/Navbar";
+import "./CSS-Files/Navbar.css";
 
 function App() {
   // do fetching here and pass props to the relevant component.
-  let Component;
-  switch (window.location.pathname) {
-    case "/":
-      Component = <Header />;
-      break;
-    case "/aboutMe":
-      Component = <AboutMe />;
-      break;
-    case "/skills":
-      Component = <Skills />;
-      break;
-    case "/projects":
-      Component = <Projects />;
-      break;
-    case "/contact":
-      Component = <Contact />;
-      break;
-    default:
-      Component = null;
-      break;
-  }
   return (
     <div>
       <Navbar />
-    
-      {Component}
-      
+      <div id="home">
+        <Header />
+      </div>
+      <div id="about">
+        <AboutMe />
+      </div>
+      <div id="skills">
+        <Skills />
+      </div>
+      <div id="projects">
+        <Projects />
+      </div>
+      <div id="contact">
+        <Contact />
+      </div>
       <Footer />
     </div>
   );
