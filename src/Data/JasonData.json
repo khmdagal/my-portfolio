@@ -104,7 +104,7 @@
     {
       "Project_Name": "Spelling Test Practice Project",
       "My_role": "Developer",
-      "Demo": "https://statutory-spelling-practice-app.netlify.app/",
+      "Demo": "https://pwa-myspelling-prod-app.netlify.app/",
       "Objective": "The project was undertaken with the overarching goal of creating a modern web application to aid children's preparation for statutory spelling assessments.",
       "Front_end": "Leveraged powerful modern technologies such as React.js, JavaScript and CSS to deliver an interactive user experience.",
       "Backend": "Employed Node.js and Express library to establish a seamless and efficient connection between front-end and back-end components. Additionally, incorporated PostgreSQL database to manage robust data storage and retrieval.",
