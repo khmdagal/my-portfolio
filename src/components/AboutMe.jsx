@@ -20,7 +20,7 @@ function AboutMe() {
     getAboutMeData();
   }, []);
 
-  console.log(aboutData)
+  
   return (
     <div className="main-container">
       <h1 className="title">About Me</h1>
