@@ -1,28 +1,39 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import "../CSS-Files/AboutMe.css";
-
+import api from "../api";
 
 function AboutMe() {
+  const [aboutData, setAboutMeData] = useState('');
+
+  
+  
+
+  useEffect(() => {
+    async function getAboutMeData() {
+      try {
+        const response = await fetch(`${api ? api.productionAPI : api.developmentAPI}/api/v1/aboutme`);
+        const jsonData = await response.json();
+        setAboutMeData(jsonData.result[0].about);
+      } catch (error) {
+        console.log(error)
+
+      }
+    }
+
+    getAboutMeData();
+  }, []);
+
+  
   return (
     <div className="main-container">
       <h1 className="title">About Me</h1>
       <div className="intro-container">
-        <p>
-          I am a junior full stack software developer. I am passionate about web
-          development technologies.
-        </p>
-        <p>
-          I have designed, developed and deployed several projects ,and my
-          mission is to embrace a journey of continuous learning, crafting
-          innovative web applications.
-        </p>
-        <p>
-          This mission follows my successful completion of a rigorous 9-month
-          software development program at CodeYourFuture boot camp in
-          Manchester.
-        </p>
+        {
+          aboutData.split('.').map((eachParagraph) => {
+           return <p> {eachParagraph}. </p>
+          })
+        }
       </div>
-
     </div>
   );
 }

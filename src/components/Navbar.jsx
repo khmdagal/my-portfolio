@@ -2,8 +2,6 @@ import React from 'react'
 import "../CSS-Files/Navbar.css"
 
 export default function NavBar() {
-  //const origin = window.location.origin
-  
   return (
     <nav className="nav">
       <ul>
