@@ -1,14 +1,17 @@
 import React, { useState, useEffect } from "react";
 import "../CSS-Files/AboutMe.css";
+import api from "../api";
 
 function AboutMe() {
+  const [aboutData, setAboutMeData] = useState('');
 
-  const [aboutData, setAboutMeData] = useState('')
+  
+  
 
   useEffect(() => {
     async function getAboutMeData() {
       try {
-        const response = await fetch('http://localhost:3500/api/v1/aboutme');
+        const response = await fetch(`${api ? api.productionAPI : api.developmentAPI}/api/v1/aboutme`);
         const jsonData = await response.json();
         setAboutMeData(jsonData.result[0].about);
       } catch (error) {

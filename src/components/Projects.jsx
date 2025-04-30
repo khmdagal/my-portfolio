@@ -1,5 +1,6 @@
 import React,{ useEffect , useState} from "react";
 import "../CSS-Files/Projects.css";
+import api from "../api";
 //import Data from "../Data/JasonData.json";
 
 function Projects() {
@@ -7,7 +8,7 @@ function Projects() {
 
   useEffect(() => {
     async function getProjects() {
-      const response = await fetch('http://localhost:3500/api/v1/projects');
+      const response = await fetch(`${api ? api.productionAPI : api.developmentAPI}/api/v1/projects`);
       const projects = await response.json();
       setProjectsData(projects.result)
     }

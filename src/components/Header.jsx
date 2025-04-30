@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import profileImage from "../Images/Profilet1.jpg";
 import "../CSS-Files/Header.css";
+import api from "../api";
 
 
 
@@ -10,7 +11,7 @@ function Header() {
   useEffect(() => {
     async function getAboutMeData() {
       try {
-        const response = await fetch('http://localhost:3500/api/v1/aboutme');
+        const response = await fetch(`${api ? api.productionAPI : api.developmentAPI}/api/v1/aboutme`);
         const jsonData = await response.json();
         setAboutMeData(jsonData.result[0]);
       } catch (error) {
