@@ -20,6 +20,9 @@ export default function NavBar() {
         <li>
           <a href="#contact">Contact Me</a>
         </li>
+        <li>
+          <a href="#challenges">Tech Challenges</a>
+        </li>
       </ul>
     </nav>
   );
