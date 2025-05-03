@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+import api from "../api";
 import Card from "react-bootstrap/Card";
 import JavaScriptLogo from "../Images/javaScript-logo.jpg";
 import HTML5Logo from "../Images/html5-logo.png";
@@ -19,13 +20,28 @@ import TestAutomationLogo from "../Images/test-automation-logo.png";
 import "../CSS-Files/Skills.css"
 
 export default function Skills() {
+  const [skillsData, setSkillsData] = useState([])
+
+
+  useEffect(() => {
+    async function getSkills() {
+      const response = await fetch(`${api}/api/v1/skills`);
+      const skillsJsonData = await response.json();
+      setSkillsData(skillsJsonData.result)
+    }
+
+    getSkills();
+  }, [])
+
+
+ 
   return (
     <div className="skills-main-container">
       <h2 className="title">Skills</h2>
       <div className="skills-container">
-        {Data.technical_skills.map((skill) => {
-            let imageLogo;
-           
+        {skillsData.map((skill) => {
+          let imageLogo;
+
           switch (skill.name) {
             case "JavaScript":
               imageLogo = JavaScriptLogo;
