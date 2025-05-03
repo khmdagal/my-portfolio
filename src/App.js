@@ -6,7 +6,6 @@ import AboutMe from "./components/AboutMe";
 import Skills from "./components/Skills";
 import Footer from "./components/Footer";
 import Navbar from "./components/Navbar";
-import TechChallenges from './components/TechChallenges';
 
 function App() {
   // do fetching here and pass props to the relevant component.
@@ -27,9 +26,6 @@ function App() {
       </div>
       <div id="contact">
         <Contact />
-      </div>
-      <div id="challenges">
-        <TechChallenges />
       </div>
       <Footer />
     </div>
