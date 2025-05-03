@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import api from "../api";
 import Card from "react-bootstrap/Card";
-//import Data from "../Data/JasonData.json";
 import JavaScriptLogo from "../Images/javaScript-logo.jpg";
 import HTML5Logo from "../Images/html5-logo.png";
 import ExpressLogo from "../Images/express-logo.jpg";
