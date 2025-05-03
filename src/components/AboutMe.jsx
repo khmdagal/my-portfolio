@@ -11,7 +11,7 @@ function AboutMe() {
   useEffect(() => {
     async function getAboutMeData() {
       try {
-        const response = await fetch(`${api}/api/v1/aboutme`);
+        const response = await fetch(`${api ? api.productionAPI : api.developmentAPI}/api/v1/aboutme`);
         const jsonData = await response.json();
         setAboutMeData(jsonData.result[0].about);
       } catch (error) {
@@ -29,7 +29,7 @@ function AboutMe() {
       <h1 className="title">About Me</h1>
       <div className="intro-container">
         {
-          aboutData.split('. ').map((eachParagraph) => {
+          aboutData.split('.').map((eachParagraph) => {
            return <p> {eachParagraph}. </p>
           })
         }
