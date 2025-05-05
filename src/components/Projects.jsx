@@ -8,7 +8,7 @@ function Projects() {
 
   useEffect(() => {
     async function getProjects() {
-      const response = await fetch(`${api ? api.productionAPI : api.developmentAPI}/api/v1/projects`);
+      const response = await fetch(`${api.productionAPI}/api/v1/projects`);
       const projects = await response.json();
       setProjectsData(projects.result)
     }
