@@ -15,6 +15,7 @@
     text-shadow: 10px 5px 5px rgb(27, 76, 92);
     text-transform: uppercase;
     font-size: xx-large;
+    text-align: center;
 }
 
 .card {
@@ -73,7 +74,7 @@
         height: 120px;
     }
     .title {
-        font-size: large;
+        font-size: 6vw;
     }
 
     .skillName {
@@ -88,7 +89,7 @@
         height: 100px;
     }
     .title {
-        font-size: medium;
+        font-size: 7vw;
     }
 
     .skillName {
