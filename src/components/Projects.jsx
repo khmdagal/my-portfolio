@@ -1,7 +1,6 @@
 import React,{ useEffect , useState} from "react";
-import "../CSS-Files/Projects.css";
+import style from "../CSS-Files/Projects.module.css";
 import api from "../api";
-//import Data from "../Data/JasonData.json";
 
 function Projects() {
   const [projectsData, setProjectsData] = useState([]);
@@ -16,20 +15,18 @@ function Projects() {
     getProjects();
   },[])
 
-
-console.log({projectsData})
   return (
-    <div className="mainContainer">
-      <h2 className="title">Projects</h2>
-      <div className="projectsContainer">
+    <div className={style.mainContainer}>
+      <h2 className={style.title}>Projects</h2>
+      <div className={style.projectsContainer}>
         {projectsData.map((project) => {
           return (
-            <div className="projectCard" key={project.id}>
-              <div className="project-intro">
-                <h3 className="projectTitle">{project.name}</h3>
-                <span className="myRole">My Role: {project.role}</span>
+            <div className={style.projectCard} key={project.id}>
+              <div className={style.projectIntro}>
+                <h3 className={style.projectTitle}>{project.name}</h3>
+                <span className={style.myRole}>My Role: {project.role}</span>
                 <a
-                  className="demoLink"
+                  className={style.demoLink}
                   href={`${
                     typeof project.demo === "string"
                       ? project.demo
@@ -40,20 +37,20 @@ console.log({projectsData})
                 </a>
               </div>
 
-              <div className="projectObjective">
+              <div className={style.projectObjective}>
                 <span>Objective </span>
                 <p>{project.objective}</p>
               </div>
               
-              <div className="techStack">
+              <div className={style.techStack}>
                 <span>Project Tech Stack </span>
                 <p>{project.tech_stack}</p>
               </div>
-              <div className="frontend">
+              <div className={style.frontend}>
                 <span>Front-end Tech Stack </span>
                 <p>{project.frontend}</p>
               </div>
-              <div className="backend">
+              <div className={style.backend}>
                 <span>Back-end Tech Stack </span>
                 <p>{project.backend}</p>
               </div>

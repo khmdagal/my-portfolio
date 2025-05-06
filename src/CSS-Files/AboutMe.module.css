@@ -4,7 +4,7 @@ body {
     font-family: "Playfair Display", serif;
 }
 
-.main-container {
+.mainContainer {
     width: 100%;
     height: 100vh;
     display: flex;
@@ -18,7 +18,7 @@ body {
     font-size: 5vw;
 }
 
-.intro-container {
+.introContainer {
     margin: 10px;
     padding: 10px;
     width: 50%;
@@ -27,7 +27,7 @@ body {
 
 /* large laptops*/
 @media screen and (max-width: 1440px) {
-    .intro-container {
+    .introContainer {
         width: 70%;
         font-size: x-large;
     }
@@ -35,7 +35,7 @@ body {
 
 /* laptops*/
 @media screen and (max-width: 1024px) {
-    .intro-container {
+    .introContainer {
         width: 80%;
         font-size: large;
     }
@@ -43,7 +43,7 @@ body {
 
 /* tablets  */
 @media screen and (max-width: 768px) {
-    .intro-container {
+    .introContainer {
         width: 90%;
         font-size: medium;
     }
@@ -55,7 +55,7 @@ body {
         font-size: 6vw;
     }
 
-    .intro-container {
+    .introContainer {
         width: 95%;
         font-size: small;
     }
@@ -67,7 +67,7 @@ body {
         font-size: 7vw;
     }
 
-    .intro-container {
+    .introContainer {
         width: 100%;
         font-size: x-small;
     }

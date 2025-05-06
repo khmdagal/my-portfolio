@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import profileImage from "../Images/Profilet1.jpg";
-import "../CSS-Files/Header.css";
+import "../CSS-Files/Header.module.css";
 import api from "../api";
 
 
