@@ -1,12 +1,9 @@
 import React, { useState, useEffect } from "react";
-import "../CSS-Files/AboutMe.css";
+import style from "../CSS-Files/AboutMe.module.css";
 import api from "../api";
 
 function AboutMe() {
   const [aboutData, setAboutMeData] = useState('');
-
-  
-  
 
   useEffect(() => {
     async function getAboutMeData() {
@@ -25,11 +22,11 @@ function AboutMe() {
 
   
   return (
-    <div className="main-container">
-      <h1 className="title">About Me</h1>
-      <div className="intro-container">
+    <div className={style.mainContainer}>
+      <h1 className={style.title}>About Me</h1>
+      <div className={style.introContainer}>
         {
-          aboutData.split('.').map((eachParagraph) => {
+          aboutData.split('. ').map((eachParagraph) => {
            return <p> {eachParagraph}. </p>
           })
         }

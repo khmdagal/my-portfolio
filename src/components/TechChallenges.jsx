@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 //import Card from 'react-bootstrap/Card'
-import "../CSS-Files/Projects.css";
+import "../CSS-Files/Projects.module.css";
 import api from "../api";
 
 function TechnicalChallenges() {

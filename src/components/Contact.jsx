@@ -1,7 +1,6 @@
-//import Form from "react-bootstrap/Form";
 import { useRef, useState } from "react";
 import emailjs from "@emailjs/browser";
-import "../CSS-Files/Contact.css";
+import style from "../CSS-Files/Contact.module.css";
 
 function Contact() {
   const form = useRef();
@@ -27,11 +26,11 @@ function Contact() {
   };
 
   return (
-    <div className="container">
-      <h1 id="email-title" className="title">
+    <div className={style.container}>
+      <h1 id={style.emailTitle} className={style.title}>
         Contact me
       </h1>
-      {successMsg && <div className="successMsg">{successMsg}</div>}
+      {successMsg && <div className={style.successMsg}>{successMsg}</div>}
       <form
         ref={form}
         onSubmit={handleSendEmail}
