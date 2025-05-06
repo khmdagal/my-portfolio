@@ -8,14 +8,14 @@
   width: 100%;
 }
 
-.footer-container {
+.footerContainer {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
 
-.social-icons {
+.socialIcons {
   font-size: 24px;
   margin-right: 10px;
 }

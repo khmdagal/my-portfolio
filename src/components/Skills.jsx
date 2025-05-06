@@ -1,11 +1,10 @@
 import React, { useState, useEffect } from "react";
 import api from "../api";
 import Card from "react-bootstrap/Card";
-import "../CSS-Files/Skills.css"
+import style from "../CSS-Files/Skills.module.css"
 
 export default function Skills() {
   const [skillsData, setSkillsData] = useState([])
-
 
   useEffect(() => {
     async function getSkills() {
@@ -20,13 +19,13 @@ export default function Skills() {
 
 
   return (
-    <div className="skills-main-container">
-      <h2 className="title">Skills</h2>
-      <div className="skills-container">
+    <div className={style.mainContainer}>
+      <h2 className={style.title}>Skills</h2>
+      <div className={style.skillsContainer}>
         {skillsData.map((skill) => {
           return (
-            <Card className="card" key={skill.name}>
-              <h2 className="skill-name">{skill.name}</h2>
+            <Card className={style.card} key={skill.name}>
+              <h2 className={style.skillName}>{skill.name}</h2>
             </Card>
           );
         })}

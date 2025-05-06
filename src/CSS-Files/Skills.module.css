@@ -1,17 +1,17 @@
 
-.skills-main-container {
+.mainContainer {
     width: 100%;
     display: flex;
     flex-direction: column;
     background-color: rgb(238, 245, 245);
 }
 
-.skills-container {
+.skillsContainer {
     display: flex;
     flex-wrap: wrap;
 }
 
-.skills-title {
+.title {
     text-shadow: 10px 5px 5px rgb(27, 76, 92);
     text-transform: uppercase;
     font-size: xx-large;
@@ -31,14 +31,9 @@
     box-shadow: 10px 10px 5px lightblue;
 }
 
-.skill-name {
+.skillName {
     font-size: large;
     text-align: center;
-}
-
-.skill-image {
-    width: 100px;
-    height: 100px;
 }
 
 /*  large laptops */
@@ -48,10 +43,6 @@
         height: 250px;
     }
 
-    .skill-image {
-        width: 120px;
-        height: 120px;
-    }
 }
 
 /* laptops  */
@@ -59,11 +50,6 @@
     .card {
         width: 180px;
         height: 180px;
-    }
-
-    .skill-image {
-        width: 90px;
-        height: 90px;
     }
 }
 
@@ -86,17 +72,11 @@
         width: 120px;
         height: 120px;
     }
-
-    .skill-image {
-        width: 60px;
-        height: 60px;
-    }
-
-    .skills-title {
+    .title {
         font-size: large;
     }
 
-    .skill-name {
+    .skillName {
         font-size: small;
     }
 }
@@ -107,17 +87,11 @@
         width: 100px;
         height: 100px;
     }
-
-    .skill-image {
-        width: 50px;
-        height: 50px;
-    }
-
-    .skills-title {
+    .title {
         font-size: medium;
     }
 
-    .skill-name {
+    .skillName {
         font-size: x-small;
     }
 }
