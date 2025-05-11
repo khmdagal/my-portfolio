@@ -48,14 +48,13 @@ export default function Skills() {
             <p>...Skills data is being loaded 🤞</p>
           </div>
         ) :
-          <div>
+          <div className={style.mainContainer}>
             <h1 className={style.title}>Skills</h1>
             <div className={style.skillsContainer}>
               {
                 skillsData.map((eachSkill) => {
                   return ( 
                     <Card key={eachSkill._id} className={style.card}>
-                      <Card.Img variant="top" src={eachSkill.image} />
                       <Card.Body>
                         <Card.Title>{eachSkill.name}</Card.Title>
                       </Card.Body>

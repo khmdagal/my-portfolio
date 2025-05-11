@@ -47,7 +47,7 @@ function AboutMe() {
           <p>...Self introduction data is being loaded 🤞</p>
           </div>
         ) :
-          <div>
+          <div className={style.loaderContainer}>
             <h1 className={style.title}>About Me</h1>
             <div className={style.introContainer}>
               {
