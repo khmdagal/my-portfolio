@@ -1,26 +1,28 @@
 import React from 'react'
+import { Link } from "react-router-dom"
+
 import style from "../CSS-Files/Navbar.module.css"
 
 export default function NavBar() {
-  return (
-    <nav className={style.nav}>
-      <ul>
-        <li>
-          <a href="#home">Home</a>
-        </li>
-        <li>
-          <a href="#about">About Me</a>
-        </li>
-        <li>
-          <a href="#skills">Skills</a>
-        </li>
-        <li>
-          <a href="#projects">Project</a>
-        </li>
-        <li>
-          <a href="#contact">Contact Me</a>
-        </li>
-      </ul>
-    </nav>
-  );
+  const pages = [
+    { name: "Home", link: "/home" },
+    { name: "About Me", link: "/about" },
+    { name: "Skills", link: "/skills" },
+    { name: "Projects", link: "/projects" },
+    { name: "Contact Me", link: "/contact" },
+  ];
+ 
+    return (
+      <nav className={style.nav}>
+        <ul className={style.navList}>
+          {pages.map((page) => (
+            <li key={page.name}>
+              <Link to={page.link} className={style.navLink}>
+                {page.name}
+              </Link>
+            </li>
+          ))} 
+        </ul>
+      </nav>
+    );
 }
