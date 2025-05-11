@@ -4,6 +4,9 @@
     display: flex;
     flex-direction: column;
     background-color: rgb(238, 245, 245);
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
 }
 
 .skillsContainer {
@@ -35,6 +38,13 @@
 .skillName {
     font-size: large;
     text-align: center;
+}
+.loaderContainer{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
 }
 
 /*  large laptops */
