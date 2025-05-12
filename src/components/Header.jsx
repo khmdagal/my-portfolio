@@ -18,7 +18,7 @@ function Header() {
   useEffect(() => {
     async function getAboutMeData() {
       try {
-        const response = await fetch(`${api.productionAPI}/api/v1/aboutme`);
+        const response = await fetch(`${api}/api/v1/aboutme`);
         const jsonData = await response.json();
         setAboutMeData(jsonData.result[0]);
       } catch (error) {
