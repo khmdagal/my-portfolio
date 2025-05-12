@@ -16,7 +16,7 @@ export default function Skills() {
 
   useEffect(() => {
     async function getSkills() {
-      const response = await fetch(`${api.productionAPI}/api/v1/skills`);
+      const response = await fetch(`${api}/api/v1/skills`);
       const skillsJsonData = await response.json();
       setSkillsData(skillsJsonData.result)
     }
