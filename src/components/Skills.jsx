@@ -6,6 +6,7 @@ import style from "../CSS-Files/Skills.module.css"
 
 export default function Skills() {
   const [skillsData, setSkillsData] = useState([])
+  const [error, setError] = useState(null);
   const [loading, setLoading] = useState(true);
   const color = "black";
   const override = {
@@ -16,19 +17,23 @@ export default function Skills() {
 
   useEffect(() => {
     async function getSkills() {
-      const response = await fetch(`${api}/api/v1/skills`);
-      const skillsJsonData = await response.json();
-      setSkillsData(skillsJsonData.result)
+      try {
+        const response = await fetch(`${api}/api/v1/skills`);
+        const skillsJsonData = await response.json();
+        setSkillsData(skillsJsonData.result)
+      } catch (error) {
+        setError('Failed to fetch skills data');
+      }
     }
 
     getSkills();
   }, [])
 
-  useEffect(() => { 
+  useEffect(() => {
     if (skillsData.length > 0) {
       setLoading(false);
     }
-   }
+  }
     , [skillsData]);
 
   return (
@@ -45,7 +50,7 @@ export default function Skills() {
               aria-label="Loading Spinner"
               data-testid="loader"
             />
-            <p>...Skills data is being loaded 🤞</p>
+            {error ? <p style={{ color: 'red' }}> {error}</p> : <p>...Skills data is being loaded 🤞</p>}
           </div>
         ) :
           <div className={style.mainContainer}>
@@ -53,7 +58,7 @@ export default function Skills() {
             <div className={style.skillsContainer}>
               {
                 skillsData.map((eachSkill) => {
-                  return ( 
+                  return (
                     <Card key={eachSkill._id} className={style.card}>
                       <Card.Body>
                         <Card.Title>{eachSkill.name}</Card.Title>

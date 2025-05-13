@@ -1,14 +1,16 @@
-import { Route, Routes } from "react-router-dom";
+import React, { Route, Routes } from "react-router-dom";
+
+import Navbar from "./components/Navbar";
 import Header from "./components/Header";
-import Projects from "./components/Projects";
-import Contact from "./components/Contact";
 import AboutMe from "./components/AboutMe";
 import Skills from "./components/Skills";
+import Projects from "./components/Projects";
+import TechChallenges from "./components/TechChallenges";
+import Contact from "./components/Contact";
 import Footer from "./components/Footer";
-import Navbar from "./components/Navbar";
+
 
 function App() {
-  // do fetching here and pass props to the relevant component.
   return (
     <div style={{
       display: "flex",
@@ -24,6 +26,7 @@ function App() {
         <Route path="/skills" element={<Skills />} />
         <Route path="/projects" element={<Projects />} />
         <Route path="/contact" element={<Contact />} />
+        <Route path="/techchallenges" element={<TechChallenges />} />
       </Routes>
       <Footer />
     </div>

@@ -1,6 +1,4 @@
-import React from 'react'
 import { Link } from "react-router-dom"
-
 import style from "../CSS-Files/Navbar.module.css"
 
 export default function NavBar() {
@@ -9,6 +7,7 @@ export default function NavBar() {
     { name: "About Me", link: "/about" },
     { name: "Skills", link: "/skills" },
     { name: "Projects", link: "/projects" },
+    { name: "Technical Challenges", link: "/techchallenges" },
     { name: "Contact Me", link: "/contact" },
   ];
  

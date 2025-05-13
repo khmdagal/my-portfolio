@@ -8,6 +8,7 @@ import api from "../api";
 function Header() {
   const [aboutData, setAboutMeData] = useState('')
   const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
   const color = "#ffffff";
   const override = {
     display: "block",
@@ -22,7 +23,7 @@ function Header() {
         const jsonData = await response.json();
         setAboutMeData(jsonData.result[0]);
       } catch (error) {
-        console.log(error)
+        setError('Failed to fetch about me data');
       }
     }
     getAboutMeData();
@@ -47,7 +48,7 @@ function Header() {
             aria-label="Loading Spinner"
             data-testid="loader"
           />
-          <p>...Personal data is being loaded 🤞</p>
+          {error ? <p style={{ color: 'red' }}> { error }</p> : <p>...Personal data is being loaded 🤞</p>}
         </div>
       ) : <div>
         <div className="image-container">
