@@ -6,6 +6,7 @@ import api from "../api";
 function AboutMe() {
   const [aboutData, setAboutMeData] = useState('');
   const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
   const color = "#ffffff";
   
 
@@ -16,8 +17,7 @@ function AboutMe() {
         const jsonData = await response.json();
         setAboutMeData(jsonData.result[0].about);
       } catch (error) {
-        console.log(error)
-
+        setError('Failed to fetch about me data');
       }
     }
 
@@ -44,7 +44,7 @@ function AboutMe() {
             aria-label="Loading Spinner"
             data-testid="loader"
           />
-          <p>...Self introduction data is being loaded 🤞</p>
+          { error ? <p style={{ color: 'red' }}> { error }</p> : <p>...Self introduction data is being loaded 🤞</p>}
           </div>
         ) :
           <div className={style.loaderContainer}>

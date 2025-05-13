@@ -1,5 +1,3 @@
-
-import React from 'react';
 import { FaLinkedin, FaGithub } from "react-icons/fa";
 import {MdOutlineEmail } from "react-icons/md"
 import style from "../CSS-Files/Footer.module.css"
