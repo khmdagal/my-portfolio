@@ -5,13 +5,18 @@ import api from "../api";
 
 function Projects() {
   const [projectsData, setProjectsData] = useState([]);
+  const [error, setError] = useState(null);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     async function getProjects() {
-      const response = await fetch(`${api}/api/v1/projects`);
+      try {
+        const response = await fetch(`${api}/api/v1/projects`);
       const projects = await response.json();
       setProjectsData(projects.result)
+      } catch (error) {
+        setError('Failed to fetch projects data');
+      }
     }
     getProjects();
   }, []);
@@ -35,7 +40,7 @@ function Projects() {
                 size={50}
                 radius={50}
               />
-              <p>... Projects data is being loaded 🤞</p>
+             {error ? <p style={{ color: 'red' }}> { error }</p> : <p>... Projects data is being loaded 🤞</p>}
             </div>
           ) :
           <div>
