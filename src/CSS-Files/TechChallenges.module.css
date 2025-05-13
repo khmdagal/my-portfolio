@@ -1,0 +1,90 @@
+/* Base for small mobile devices  */
+
+.title {
+    text-shadow: 10px 5px 5px rgb(27, 76, 92);
+    text-transform: uppercase;
+    font-size: 16px;
+    text-align: center;
+}
+
+.challengesContainer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.challengeCard {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin: 10px; 
+    padding: 10px; 
+    background-color: #ffffff;
+    box-shadow: 10px 10px 5px lightblue;
+    width: 100%; 
+    font-size: 14px; 
+    border-radius: 5px 5px 60px 60px;
+}
+
+.challengeTitle {
+    margin-top: 0;
+}
+
+span {
+    font-weight: bolder;
+}
+
+.loaderContainer{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* mobile devices */
+
+@media only screen and (min-width: 375px) {
+    .title {
+        font-size: 6vw;
+    }
+
+    .challengeCard {
+        margin: 15px;
+        padding: 15px;
+        font-size: 16px;
+    }
+
+}
+
+/* large mobile devices  */
+
+@media only screen and (min-width: 425px) {
+    .challengeCard {
+        width: 48%; 
+    }
+}
+
+/* tablets */
+
+@media only screen and (min-width: 768px) {
+    .challengeCard {
+        width: 30%; 
+    }
+}
+
+/* laptops*/
+
+@media only screen and (min-width: 1024px) {
+    .challengeCard {
+        width: 22%; 
+    }
+}
+
+/* large laptops  */
+
+@media only screen and (min-width: 1440px) {
+    .challengeCard {
+        width: 20%; 
+    }
+}
