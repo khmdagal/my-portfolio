@@ -1,0 +1,166 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 20px;
+}
+
+form {
+  display: flex;
+  width: 50%;
+  flex-direction: column;
+  align-items: flex-start;
+  border: solid #1976d2;
+  padding: 30px;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+  border-radius: 80px 5px 60px 5px;
+}
+
+.title {
+  text-shadow: 10px 5px 5px rgb(27, 76, 92);
+  text-transform: uppercase;
+  font-size: xx-large;
+  text-align: center;
+  font-size: 5vw;
+  color: black;
+}
+
+#emailTitle {
+  color: black;
+}
+
+.successMsg {
+  padding: 5px;
+  font-style: italic;
+  font-weight: bolder;
+  text-align: center;
+  width: 70%;
+}
+
+input,
+textarea {
+  padding: 10px;
+  margin-bottom: 20px;
+  border-radius: 5px;
+  border: solid lightblue;
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
+  width: 95%;
+  height: 30px;
+  color: black;
+}
+
+button {
+  background-color: #2196f3;
+  color: #ffffff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+button:hover {
+  background-color: #1976d2;
+}
+
+.styledTable {
+  border-collapse: collapse;
+  margin: 25px 0;
+  font-size: 0.9em;
+  font-family: sans-serif;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+  border: 3px solid purple;
+  width: 100%;
+}
+.rows {
+  display:grid;
+  grid-template-columns: 3fr 1fr;
+  border-radius: 10px;
+  align-items: center;
+  /* border: #2196f3 1px solid; */
+  /* box-shadow: rgba(98, 175, 97, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset; */
+  box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset, rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset, rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
+  /* background: -webkit-linear-gradient(#eee, #88e53b); */
+  padding: 5px;
+  margin: 10px;
+}
+.feedback{
+  text-align:justify;
+  padding: 10px;
+}
+
+.rating{
+  text-align: center;
+  border-radius: 50% 0 0 50%;
+  background-color: lightgreen;
+  padding: 10px;
+  margin-right: 10%;
+  border: lightcoral;
+  /* box-shadow: l blanchedalmond; */
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(106, 69, 231, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+}
+.styledTable thead tr {
+  background-color: #67c211;
+  color: #ffffff;
+  text-align: left;
+  font-size: larger;
+}
+
+/* Mobile (375px) */
+@media (max-width: 375px) {
+  .title {
+    font-size: 7vw;
+  }
+
+  form {
+    width: 90%;
+    padding: 20px;
+  }
+}
+
+/* Large Mobile (425px) */
+@media (min-width: 375px) and (max-width: 425px) {
+  .title {
+    font-size: 6vw;
+  }
+
+  form {
+    width: 80%;
+    padding: 25px;
+  }
+}
+
+/* Tablet (768px) */
+@media (min-width: 426px) and (max-width: 768px) {
+  form {
+    width: 70%;
+    padding: 30px;
+  }
+
+
+}
+
+/* Laptop (1024px) */
+@media (min-width: 769px) and (max-width: 1024px) {
+  form {
+    width: 60%;
+    padding: 35px;
+  }
+
+}
+
+/* Large Laptops (1440px) */
+@media (min-width: 1025px) and (max-width: 1440px) {
+  form {
+    width: 50%;
+    padding: 40px;
+  }
+
+}

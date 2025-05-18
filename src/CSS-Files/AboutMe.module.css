@@ -11,7 +11,8 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: #aabcc0;
+    /* background-color: #aabcc0; */
+    background: -webkit-linear-gradient(#eee, #333);
     padding: 10px;
 }
 
@@ -32,6 +33,7 @@ body {
     padding: 10%;
     width: 50%;
     font-size: xx-large;
+    color: #eee;
 
    
 }
