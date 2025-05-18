@@ -47,8 +47,9 @@ function Feedback() {
   return (
 
     <div className={style.feedbackContainer}>
-      <h1>Feedback</h1>
+      
       <form ref={form} onSubmit={handleSubmit} className={style.feedbackForm}>
+        <h1 className={style.title}>Feedback</h1>
         <input type="text" value={name} onChange={(e) => setName(e.target.value)} name="name" placeholder="Your Name" required />
         <input type="text" value={email} onChange={(e) => setEmail(e.target.value)} name="email" placeholder="Your email" required />
         <input type="number" value={rating} onChange={(e) => setRating(e.target.value)} name="rating" placeholder="Place rate this portfolio" required />
