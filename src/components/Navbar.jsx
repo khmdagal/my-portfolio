@@ -8,7 +8,7 @@ export default function NavBar() {
     { name: "Skills", link: "/skills" },
     { name: "Projects", link: "/projects" },
     { name: "Technical Challenges", link: "/techchallenges" },
-    { name: "Contact Me", link: "/contact" },
+    { name: "FeedBack", link: "/feedback" },
   ];
  
     return (
