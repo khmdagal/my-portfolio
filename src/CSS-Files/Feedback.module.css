@@ -58,8 +58,8 @@ form {
   height: 10vh;
 }
 
-button {
-  background-color: #2196f3;
+.feedbackSubmitButton {
+  background-color: #4009c0;
   color: #ffffff;
   border: none;
   padding: 10px 20px;

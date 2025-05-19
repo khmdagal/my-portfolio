@@ -63,7 +63,7 @@ function Feedback() {
           <label htmlFor="feedbackBox">Feedback box</label>
           <textarea id="feedbackBox" className={style.feedbackInput} name="feedback" value={feedback} onChange={(e) => setFeedback(e.target.value)} placeholder="Your Feedback is Important" required  ></textarea>
        
-        <button type="submit">Send</button>
+        <button className={style.feedbackSubmitButton} type="submit">Send</button>
       </form>
       {successMsg && <p className={style.successMsg}>{successMsg}</p>}
       {errorMsg && <p className={style.errorMsg}>{errorMsg}</p>}
