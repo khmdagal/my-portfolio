@@ -7,7 +7,7 @@ const Footer = () => {
     <footer className={style.footer}>
       <div className={style.footerContainer}>
         <div className={style.socialIcons}>
-          <a
+          <a aria-label="LinkedIn link"
             href="https://www.linkedin.com/in/kh-m-dagal/"
             target="_blank"
             rel="noopener noreferrer"
@@ -15,6 +15,7 @@ const Footer = () => {
             <FaLinkedin className={style.icon} />
           </a>
           <a
+            aria-label="GitHub link"
             href="https://github.com/khmdagal"
             target="_blank"
             rel="noopener noreferrer"
