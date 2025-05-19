@@ -47,14 +47,22 @@ function Feedback() {
   return (
 
     <div className={style.feedbackContainer}>
-      
+
       <form ref={form} onSubmit={handleSubmit} className={style.feedbackForm}>
         <h1 className={style.title}>Feedback</h1>
-        <input type="text" value={name} onChange={(e) => setName(e.target.value)} name="name" placeholder="Your Name" required />
-        <input type="text" value={email} onChange={(e) => setEmail(e.target.value)} name="email" placeholder="Your email" required />
-        <input type="number" value={rating} onChange={(e) => setRating(e.target.value)} name="rating" placeholder="Place rate this portfolio" required />
-        <textarea name="feedback" value={feedback} onChange={(e) => setFeedback(e.target.value)} placeholder="Your Feedback is Important" required  ></textarea>
-
+        
+          <label htmlFor="name">Name</label>
+          <input id="name" className={style.feedbackNameInput} type="text" value={name} onChange={(e) => setName(e.target.value)} name="name" placeholder="Your Name" required />
+        
+          <label htmlFor="email">Email </label>
+          <input id="email" className={style.feedbackEmailInput} type="text" value={email} onChange={(e) => setEmail(e.target.value)} name="email" placeholder="Your email" required />
+       
+          <label htmlFor="rating" >Rating (only numbers)</label>
+          <input id="rating" className={style.feedbackRatingInput} type="number" value={rating} onChange={(e) => setRating(e.target.value)} name="rating" placeholder="Place rate this portfolio" required />
+     
+          <label htmlFor="feedbackBox">Feedback box</label>
+          <textarea id="feedbackBox" className={style.feedbackInput} name="feedback" value={feedback} onChange={(e) => setFeedback(e.target.value)} placeholder="Your Feedback is Important" required  ></textarea>
+       
         <button type="submit">Send</button>
       </form>
       {successMsg && <p className={style.successMsg}>{successMsg}</p>}
