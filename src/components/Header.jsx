@@ -52,7 +52,7 @@ function Header() {
         </div>
       ) : <div>
         <div className="image-container">
-          <img src={profileImage} alt="Profile_Picture" />
+          <img rel="Profile Image" src={profileImage} alt="Profile_Picture" />
         </div>
         <h1 id="name">{`${aboutData.first_name} ${aboutData.last_name}`}</h1>
         <h2 id="profession">{aboutData.profession}</h2>

@@ -16,7 +16,7 @@ export default function NavBar() {
         <ul className={style.navList}>
           {pages.map((page) => (
             <li key={page.name}>
-              <Link to={page.link} className={style.navLink}>
+              <Link rel={page.name+" link"} to={page.link} className={style.navLink}>
                 {page.name}
               </Link>
             </li>
