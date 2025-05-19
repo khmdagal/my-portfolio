@@ -13,7 +13,6 @@ function GetFeedback({ propData }) {
             try {
                 const response = await fetch(`${api}/api/v1/feedbacks`)
                 const feedbacksJsonData = await response.json();
-                console.log(feedbacksJsonData)
                 setFeedbacks(feedbacksJsonData.result)
             } catch (error) {
                 setError('Failed to fetch feedback data');
@@ -38,8 +37,6 @@ function GetFeedback({ propData }) {
     // Sort Decending order
     const indexedFeedbacks = feedbacks?.map((el, indx) => ({ indx, value: el }));
     indexedFeedbacks?.sort((a, b) => b.indx - a.indx);
-
-    console.log({ indexedFeedbacks })
 
     return (
         <div>
