@@ -1,52 +1,52 @@
-import React, { useEffect, useState } from "react";
+import { useQuery } from '@tanstack/react-query'
 import { CircleLoader } from "react-spinners";
 import style from "../CSS-Files/Projects.module.css";
 import api from "../api";
 
 function Projects() {
-  const [projectsData, setProjectsData] = useState([]);
-  const [error, setError] = useState(null);
-  const [loading, setLoading] = useState(true);
+ 
 
-  useEffect(() => {
-    async function getProjects() {
-      try {
-        const response = await fetch(`${api}/api/v1/projects`);
+  async function getProjects() {
+    try {
+      const response = await fetch(`${api}/api/v1/projects`);
       const projects = await response.json();
-      setProjectsData(projects.result)
-      } catch (error) {
-        setError('Failed to fetch projects data');
-      }
+      return projects.result
+    } catch (error) {
+      console.log(`Failed to fetch projects data ${error.message}`);
     }
-    getProjects();
-  }, []);
+  }
+
+  const { data, isLoading, error } = useQuery({
+    queryKey: ['projects'],
+    queryFn: getProjects,
+    staleTime: 60000 // One minute
+  });
 
 
-  useEffect(() => {
-    if (projectsData.length > 0) {
-      setLoading(false);
-    }
-  }, [projectsData]);
+
+
+ 
 
   return (
     <div className={style.mainContainer}>
       {
-        loading ?
+        isLoading ?
           (
             <div className={style.loaderContainer}>
               <CircleLoader
                 height={200}
+                loading={isLoading}
                 width={100}
                 size={50}
                 radius={50}
               />
-             {error ? <p style={{ color: 'red' }}> { error }</p> : <p>... Projects data is being loaded 🤞</p>}
+              {error ? <p style={{ color: 'red' }}> {error.message}</p> : <p>... Projects data is being loaded 🤞</p>}
             </div>
           ) :
           <div>
             <h2 className={style.title}>Projects</h2>
             <div className={style.projectsContainer}>
-              {projectsData.map((project) => {
+              {data?.map((project) => {
                 return (
                   <div className={style.projectCard} key={project.id}>
                     <div className={style.projectIntro}>
@@ -55,8 +55,8 @@ function Projects() {
                       <a
                         className={style.demoLink}
                         href={`${typeof project.demo === "string"
-                            ? project.demo
-                            : project.demo[0]
+                          ? project.demo
+                          : project.demo[0]
                           }`}
                       >
                         Project Demo

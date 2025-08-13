@@ -1,58 +1,52 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect } from "react";
+import { useQuery } from '@tanstack/react-query'
 import { RingLoader } from "react-spinners";
 import style from "../CSS-Files/Feedback.module.css";
 import api from "../api";
 
 function GetFeedback({ propData }) {
-    const [feedbacks, setFeedbacks] = useState([]);
-    const [error, setError] = useState(null);
-    const [loading, setLoading] = useState(true);
 
-    useEffect(() => {
-        async function getFeedbacksData() {
-            try {
-                const response = await fetch(`${api}/api/v1/feedbacks`)
-                const feedbacksJsonData = await response.json();
-                setFeedbacks(feedbacksJsonData.result)
-            } catch (error) {
-                setError('Failed to fetch feedback data');
-            }
+    async function getFeedbacksData() {
+        try {
+            const response = await fetch(`${api}/api/v1/feedbacks`)
+            const feedbacksJsonData = await response.json();
+            return feedbacksJsonData.result
+        } catch (error) {
+            console.log(error.message)
         }
-        getFeedbacksData()
+    }
 
-    }, [])
-
-    useEffect(() => {
-        if (feedbacks.length > 0) {
-            setLoading(false);
-        }
-    }, [feedbacks]);
+    const { data, isLoading, error } = useQuery({
+        queryKey: ['getFeedback'],
+        queryFn: getFeedbacksData,
+        staleTime: 60000 // One minute
+    })
 
     useEffect(() => {
         if (propData !== undefined) {
-            feedbacks.push(propData)
+            data.push(propData)
         }
-    }, [propData, feedbacks]);
+    }, [propData, data]);
 
     // Sort Decending order
-    const indexedFeedbacks = feedbacks?.map((el, indx) => ({ indx, value: el }));
+    const indexedFeedbacks = data && data?.map((el, indx) => ({ indx, value: el }));
     indexedFeedbacks?.sort((a, b) => b.indx - a.indx);
 
     return (
         <div>
             {
-                loading ? (
+                isLoading ? (
                     <div className={style.loaderContainer}>
                         <RingLoader
                             color="#000000"
-                            loading={loading}
+                            loading={isLoading}
                             height={100}
                             width={50}
                             radius={50}
                             aria-label="Loading Spinner"
                             data-testid="loader"
                         />
-                        {error ? <p style={{ color: 'red' }}> {error}</p> : <p>...Feedback data is being loaded 🤞</p>}
+                        {error ? <p style={{ color: 'red' }}> {error.message}</p> : <p>...Feedback data is being loaded 🤞</p>}
                     </div>
                 ) :
 
