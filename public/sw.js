@@ -5,7 +5,7 @@ const ASSETS = [
     '/index.html',
     '/manifest.json',
     '/profile_picture.png',
-    '/static/js/main.e9f0ed89.js',
+    '/static/js/main.fb105726.js',
     '/static/css/main.2ca1f21b.css'
 ];
 const FALLBACK = '/index.html'; // Or another offline page/image
